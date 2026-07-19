@@ -1,0 +1,6 @@
+{
+  "name": "Portfolio & Developer Showcase",
+  "description": "A stunning personal portfolio and project showcase website with dark mode, interactive projects, skills breakdown, and contact form.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
