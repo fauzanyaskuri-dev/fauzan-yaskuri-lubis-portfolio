@@ -167,6 +167,24 @@ export const ProjectsSection: React.FC = () => {
                 <p className="text-sm text-zinc-300 leading-relaxed">{selectedProject.description}</p>
               </div>
 
+              {selectedProject.liveUrl && selectedProject.liveUrl !== 'https://github.com' && (
+                <div className="p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 animate-fade-in">
+                  <div className="space-y-1">
+                    <p className="text-xs font-bold text-emerald-400 uppercase tracking-wider">Live System Active</p>
+                    <p className="text-xs text-zinc-300">This project has an interactive live preview hosted on Cloud Run.</p>
+                  </div>
+                  <a
+                    href={selectedProject.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-zinc-950 text-xs font-bold transition-all shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/30 flex items-center gap-1.5 shrink-0"
+                  >
+                    <span>Launch App</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                </div>
+              )}
+
               <div className="space-y-2">
                 <p className="text-xs font-mono text-zinc-400 uppercase tracking-wider">Technologies Used</p>
                 <div className="flex flex-wrap gap-2">

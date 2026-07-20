@@ -1,4 +1,6 @@
 import { PortfolioProject, SkillCategory, ExperienceItem, EducationItem } from '../types';
+import ebansosImg from '../assets/images/regenerated_image_1784570422032.png';
+import msmeImg from '../assets/images/regenerated_image_1784573724831.png';
 
 export const portfolioProjects: PortfolioProject[] = [
   {
@@ -19,9 +21,9 @@ export const portfolioProjects: PortfolioProject[] = [
     tagline: 'Integrated Social Assistance Web System | Product Owner & Frontend Developer',
     description: 'A type-safe community web platform streamlining local government assistance pipelines. Deployed real-time citizen tracking gateways (TrackingScreen), managed Role-Based Access Control (RBAC) with secure RT/RW admin interfaces (AdminRTScreen & AdminRWScreen), and coordinated React, TypeScript, and Vite execution.',
     category: 'Full-Stack',
-    image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&auto=format&fit=crop&q=80',
+    image: ebansosImg,
     technologies: ['React', 'TypeScript', 'Vite', 'RBAC', 'UI/UX Design', 'Product Strategy'],
-    liveUrl: 'https://github.com',
+    liveUrl: 'https://ais-pre-emga5ubj4w6cyvbpf5rg7v-508961465086.asia-southeast1.run.app',
     githubUrl: 'https://github.com',
     featured: true
   },
@@ -31,9 +33,9 @@ export const portfolioProjects: PortfolioProject[] = [
     tagline: 'Product Analyst & UI/UX Designer',
     description: 'Comprehensive mobile solution for local culinary businesses. Conducted intensive user discovery and market research to identify operational frictions, modeled detailed user personas/journeys, and structured high-fidelity interactive wireframes/prototypes in Figma to establish a complete Minimum Viable Product (MVP).',
     category: 'UI/UX Design',
-    image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&auto=format&fit=crop&q=80',
+    image: msmeImg,
     technologies: ['Figma', 'Miro', 'Wireframing', 'User Discovery', 'User Journey Mapping', 'MVP Prototyping'],
-    liveUrl: 'https://github.com',
+    liveUrl: 'https://lovely-luxury-50532414.figma.site',
     githubUrl: 'https://github.com',
     featured: true
   }
