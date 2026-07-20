@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Code2, Github, Linkedin, Mail, Menu, X, Sparkles } from 'lucide-react';
+import { motion, useScroll, useSpring } from 'motion/react';
 
 interface NavbarProps {
   onOpenContact: () => void;
@@ -8,6 +9,13 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -122,6 +130,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
           </div>
         </div>
       )}
+
+      {/* Scroll Progress Indicator Bar */}
+      <motion.div
+        className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-gradient-to-r from-emerald-500 via-teal-400 to-sky-400 origin-[0%]"
+        style={{ scaleX }}
+      />
     </nav>
   );
 };

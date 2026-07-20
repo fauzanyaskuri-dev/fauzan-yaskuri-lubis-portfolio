@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { experiences, educationList } from '../data/portfolioData';
-import { Briefcase, Calendar, MapPin, GraduationCap, CheckCircle2 } from 'lucide-react';
+import { Briefcase, Calendar, MapPin, GraduationCap, CheckCircle2, FileText } from 'lucide-react';
 import { motion } from 'motion/react';
+import { InternshipDocumentationModal } from './InternshipDocumentationModal';
 
 export const ExperienceSection: React.FC = () => {
+  const [isDocModalOpen, setIsDocModalOpen] = useState(false);
+
   return (
     <section id="experience" className="py-24 bg-zinc-950 relative">
       <div className="max-w-7xl mx-auto px-6 space-y-16">
@@ -84,6 +87,22 @@ export const ExperienceSection: React.FC = () => {
                       </span>
                     ))}
                   </div>
+
+                  {exp.id === 'exp-1' && (
+                    <div className="pt-4 border-t border-zinc-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                      <div className="space-y-0.5">
+                        <p className="text-[10px] font-mono text-emerald-400 font-bold uppercase tracking-wider">Internship System Active</p>
+                        <p className="text-[10px] text-zinc-400 leading-none">Complete activity logs and logs console is available.</p>
+                      </div>
+                      <button
+                        onClick={() => setIsDocModalOpen(true)}
+                        className="px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-zinc-950 font-bold text-xs flex items-center justify-center gap-1.5 transition-all shadow-lg shadow-emerald-500/10 hover:shadow-emerald-500/25 active:scale-95 shrink-0"
+                      >
+                        <FileText className="w-3.5 h-3.5" />
+                        Open Log Documentation
+                      </button>
+                    </div>
+                  )}
                 </motion.div>
               ))}
             </div>
@@ -144,6 +163,11 @@ export const ExperienceSection: React.FC = () => {
           </motion.div>
         </div>
       </div>
+
+      <InternshipDocumentationModal 
+        isOpen={isDocModalOpen}
+        onClose={() => setIsDocModalOpen(false)}
+      />
     </section>
   );
 };
